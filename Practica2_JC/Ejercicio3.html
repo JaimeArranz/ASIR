@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 3</title>
+        <style>
+            #boton {
+                text-align: center; 
+            }
+            #boton1{
+                background-color: black; color: white;
+            }
+            #pregunta1c {
+                color: green;
+            }
+            #pregunta2c {
+                color: green;
+            }
+            #pregunta3c {
+                color: green;
+            }
+
+            #pregunta1i{
+                color: RED;
+            }
+            #pregunta2i{
+                color: RED;
+            }
+            #pregunta3i{
+                color: RED;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="form1">
+            <p>¿Que mascota es mejor para una casa pequeña?</p>
+            <p>Seleccione una: </p>
+            <p><input type="radio" name="pregunta1">a. Chinchilla <span id="pregunta1i"></span></p>
+            <p><input type="radio" name="pregunta1">b. gato <span id="pregunta1i"></span></p>
+            <p><input type="radio" name="pregunta1">c. Gran danes <span id="pregunta1c"></span></p>
+            <p><input type="radio" name="pregunta1">d. periquito <span id="pregunta1i"></span></p>
+            <br><br><br><br>
+            <p>¿Segun el teorema de pitagoras cual es la formula correcta?</p>
+            <p><input type="radio" name="pregunta2">a. h^2=c^2+c^2 <span id="pregunta2i"></span></p>
+            <p><input type="radio" name="pregunta2">b. h^2=c^2+c^2 <span id="pregunta2i"></span></p>
+            <p><input type="radio" name="pregunta2">c. h^2=c^2+c^2 <span id="pregunta2i"></span></p>
+            <p><input type="radio" name="pregunta2">d. Todas son correctas<span id="pregunta2c"></span></p>
+            <br><br><br><br>
+            <p>¿Quien es el mejor profesor de segundo de asir?</p>
+            <p><input type="radio" name="pregunta3">a. Jose <span id="pregunta3c"></span></p>
+            <p><input type="radio" name="pregunta3">b. Carlos <span id="pregunta3i"></span></p>
+            <p><input type="radio" name="pregunta3">c. Samuel <span id="pregunta3i"></span></p>
+            <p><input type="radio" name="pregunta3">d. Maria <span id="pregunta3i"></span></p>
+            <br><br><br><br>
+            <p id="boton"><input type="button" value="siguiente" id="boton1" onclick="corregir()"></p>
+        </form>
+        <script>
+            function corregir()
+            {
+            var contador = 0
+            if (document.form1.pregunta1[2].checked)
+            {
+                contador=contador+1
+                document.getElementById("pregunta1c").innerHTML="CORRECTO"
+            }
+            else
+            {
+                document.getElementById("pregunta1i").innerHTML="INCORRECTO"
+            }
+            if (document.form1.pregunta2[3].checked)
+            {
+                contador=contador+1
+                document.getElementById("pregunta2c").innerHTML="CORRECTO"
+            }
+            else
+            {
+                document.getElementById("pregunta2i").innerHTML="INCORRECTO"
+            }
+            if (document.form1.pregunta3[0].checked)
+            {
+                contador=contador+1
+                document.getElementById("pregunta3c").innerHTML="OBVIAMENTE"
+            }
+            else
+            {
+                document.getElementById("pregunta3i").innerHTML="INCORRECTO"
+            }
+            alert("Tu nota es un "+contador+"/3")
+            }
+        </script>
+    </body>
+</html>

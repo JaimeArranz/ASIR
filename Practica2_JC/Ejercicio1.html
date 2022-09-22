@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 1</title>
+        <style>
+            #div1 {width: 20%;
+                height: 20vh;
+                background-color: red;}
+        </style>
+    </head>
+    <body>
+        <h1>Ejercicio 1</h1>
+        <div id="div1"> 
+            <p id="texto1">Este es el contenido del div1</p>
+        </div>
+        <p><input type="button" value="Cambiar Texto" onclick="cambiartexto()"></p>
+        <p><input type="button" value="Cambiar color de fondo" onclick="cambiarfondo()"></p>
+        <p><input type="button" value="Cambiar tipo y color de letra" onclick="cambiarAmbas()"></p>
+        <script>
+            function cambiartexto()
+            {
+                 var texto= prompt("De que color quieres el texto: ")
+                document.getElementById("texto1").innerHTML= texto
+            }
+            function cambiarfondo()
+            {
+                var colorF = prompt("De que color quiere el fondo")
+                document.getElementById("div1").style.backgroundColor=colorF
+            }
+            function cambiarAmbas()
+            {
+                var color = prompt("De que color quiere la letra?: ")
+                var font = String(prompt("Que font quiere para el texto?: "))
+                document.getElementById("texto1").style.color=color
+                document.getElementById("texto1").style.fontFamily=font
+            }
+        </script>
+    </body>
+</html>
